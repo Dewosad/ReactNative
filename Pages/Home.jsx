@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "./Layout";
+import BottomNav from "./BottomNav";
 import HomeBody from "./HomeBody";
 import Favourites from "./Favourites";
 import Account from "./Account";
@@ -9,7 +9,7 @@ const Home = ({ navigation }) => {
   const [activeTab, setActiveTab] = React.useState(1);
 
   return (
-    <Layout activeTab={activeTab} setActiveTab={setActiveTab}>
+    <BottomNav activeTab={activeTab} setActiveTab={setActiveTab}>
       {activeTab === 1 ? (
         <HomeBody navigation={navigation} />
       ) : activeTab === 2 ? (
@@ -19,7 +19,7 @@ const Home = ({ navigation }) => {
       ) : (
         <Category />
       )}
-    </Layout>
+    </BottomNav>
   );
 };
 

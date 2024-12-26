@@ -2,32 +2,25 @@ import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { View, Text, TouchableOpacity } from "react-native";
 
-const Card = ({
-  style,
-  title,
-  contentTitle,
-  styleView,
-  navigation,
-  navigateTo,
-}) => {
+const Card = ({ style, contentTitle, styleView, navigation, navigateTo }) => {
   return (
-    <TouchableOpacity onPress={() => navigation.navigate(navigateTo)}>
-      <View
-        style={[
-          style ?? {
-            display: "flex",
-            gap: 10,
-          },
-        ]}
+    <View
+      style={[
+        style ?? {
+          display: "flex",
+          gap: 10,
+        },
+      ]}
+    >
+      <Text
+        style={{
+          fontSize: 20,
+          color: "white",
+        }}
       >
-        <Text
-          style={{
-            fontSize: 20,
-            color: "white",
-          }}
-        >
-          {title}
-        </Text>
+        Daily Business
+      </Text>
+      <TouchableOpacity onPress={() => navigation.navigate(navigateTo)}>
         <View
           style={[
             styleView ?? {
@@ -45,8 +38,8 @@ const Card = ({
           <Text style={{ fontSize: 18, color: "white" }}>{contentTitle}</Text>
           <AntDesign name="right" size={24} color="white" />
         </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </View>
   );
 };
 

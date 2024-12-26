@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
-const Layout = ({ children, activeTab, setActiveTab }) => {
+const BottomNav = ({ children, activeTab, setActiveTab }) => {
   const tabList = [
     {
       id: 1,
@@ -120,4 +120,4 @@ const Layout = ({ children, activeTab, setActiveTab }) => {
   );
 };
 
-export default Layout;
+export default BottomNav;
