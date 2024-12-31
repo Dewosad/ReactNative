@@ -27,63 +27,13 @@ const BottomNav = ({ children, activeTab, setActiveTab }) => {
   ];
 
   return (
-    <View
-      className="flex gap-5 h-full bg-[#0a2232]"
-      style={{
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        position: "relative",
-        paddingTop: 10,
-        paddingBottom: 50,
-        margin: 0,
-        backgroundColor: "#0a2232",
-      }}
-    >
-      {/* App Bar */}
-      {/* <View
-        style={{
-          height: 50,
-          backgroundColor: "#242C37",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Text style={{ color: "white", fontSize: 20 }}>App Bar</Text>
-      </View> */}
-
-      <ScrollView
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          borderRadius: 10,
-          height: "auto",
-          paddingLeft: 20,
-          paddingRight: 20,
-        }}
-      >
+    <View className="flex gap-5 h-[100%] bg-[#0a2232] flex-col justify-between relative pt-1 pb-10 m-0">
+      <ScrollView className="flex flex-col rounded-[10px] h-auto px-3">
         {children}
       </ScrollView>
 
       {/* Bottom Bar */}
-      <View
-        className="flex gap-5"
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          alignContent: "center",
-          justifyItems: "center",
-          justifyContent: "center",
-          paddingVertical: 20,
-          backgroundColor: "#242C37",
-          display: "flex",
-          position: "absolute",
-          width: "100%",
-          bottom: 0,
-          margin: 0,
-        }}
-      >
+      <View className="flex flex-row py-5 items-center justify-center w-[100%] content-center bg-[#242C37] absolute bottom-0 m-0">
         {tabList.map((tab) => (
           <View key={tab.id} className="flex">
             <TouchableOpacity onPress={() => setActiveTab(tab.id)}>

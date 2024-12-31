@@ -4,38 +4,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 const Card = ({ style, contentTitle, styleView, navigation, navigateTo }) => {
   return (
-    <View
-      style={[
-        style ?? {
-          display: "flex",
-          gap: 10,
-        },
-      ]}
-    >
-      <Text
-        style={{
-          fontSize: 20,
-          color: "white",
-        }}
-      >
-        Daily Business
-      </Text>
+    <View className={`${style} flex gap-5`}>
       <TouchableOpacity onPress={() => navigation.navigate(navigateTo)}>
-        <View
-          style={[
-            styleView ?? {
-              padding: 17,
-              backgroundColor: "#242C37",
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              borderRadius: 10,
-              paddingRight: 20,
-            },
-          ]}
-        >
-          <Text style={{ fontSize: 18, color: "white" }}>{contentTitle}</Text>
+        <View className="p-4 bg-gray-800 flex flex-row justify-between items-center rounded-lg pr-5">
+          <Text className="text-white text-lg">{contentTitle}</Text>
           <AntDesign name="right" size={24} color="white" />
         </View>
       </TouchableOpacity>

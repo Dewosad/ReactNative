@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, Text, ScrollView, StyleSheet, Image } from "react-native";
 import mainStyle from "../../styles/mainStyle";
 import { Dropdown } from "react-native-element-dropdown";
+import podcast1 from "../../assets/podcast1.png";
+import podcast2 from "../../assets/podcast2.png";
+import podcast3 from "../../assets/podcast3.png";
+import podcast4 from "../../assets/podcast4.png";
+import podcast5 from "../../assets/podcast5.png";
 
-const News = () => {
+const Podcast = () => {
   const data = [
     { label: "Option 1", value: "option1" },
     { label: "Option 2", value: "option2" },
@@ -13,33 +18,38 @@ const News = () => {
   const content = [
     {
       id: 1,
-      title: "FRI, 03 MAR 2023",
-      heading: "Tata Steel Mining Signs MoU With GAIL For Clean Fuel",
+      heading: "Ep. 169 – Influence Starts Here – Part 2",
       desc: "GAIL will supply the agreed quantity of natural gas through its pipeline from Gujarat to Athgarh.",
+      image: podcast1,
     },
     {
       id: 2,
-      title: "FRI, 03 MAR 2023",
-      heading:
-        "IHCL Joins Forces With Tata Steel Long Products Ltd (TSLPL) to Establish a Skill Centre at Jamshedpur, Jharkhand.",
-      desc: "MUMBAI - Indian Hotels Company (IHCL), India’s largest hospitality company, announced its partnership for a specialised skill centre in Jamshedpur, Jharkhand in partnership with Tata Steel Long Products Ltd (TSLPL). Speaking on the occasion, Mr. Gau...",
+      heading: "Ep. 169 – Influence Starts Here – Part 2",
+      desc: "GAIL will supply the agreed quantity of natural gas through its pipeline from Gujarat",
+      image: podcast2,
     },
     {
       id: 3,
-      title: "FRI, 03 MAR 2023",
-      heading: "Tata Steel Mining Signs MoU With GAIL For Clean Fuel",
+      heading: "Ep. 169 – Influence Starts Here – Part 2",
       desc: "GAIL will supply the agreed quantity of natural gas through its pipeline from Gujarat to",
+      image: podcast3,
     },
     {
       id: 4,
-      title: "FRI, 03 MAR 2023",
-      heading: "IHCL Joins Forces With Tata Steel Long Products Ltd (TSLPL)",
-      desc: "MUMBAI - Indian Hotels Company (IHCL), India’s largest hospitality",
+      heading: "Ep. 169 – Influence Starts Here – Part 2",
+      desc: "GAIL will supply the agreed quantity of natural gas through its pipeline from Gujarat to",
+      image: podcast4,
+    },
+    {
+      id: 5,
+      heading: "Ep. 169 – Influence Starts Here – Part 2",
+      desc: "GAIL will supply the agreed quantity of natural gas through its pipeline from Gujarat to",
+      image: podcast5,
     },
   ];
 
   return (
-    <View style={mainStyle.mainNewsContainer}>
+    <View className="bg-[#0a2232] h-[100%] flex-col justify-between">
       <View style={mainStyle.mainScreenNews}>
         <Text style={mainStyle.textStyle}>NEWS & INSIGHTS</Text>
         <Dropdown
@@ -64,24 +74,19 @@ const News = () => {
         />
       </View>
 
-      <ScrollView>
+      <ScrollView className="px-0 pt-[37px]">
         {content.map((c) => (
-          <View key={c.id} className="px-5">
-            <View style={styles.rowContainer}>
-              <Text className="text-[12px] font-bold leading-[16px] text-[white]">
-                {c.title}
+          <View key={c.id} className="px-3">
+            <View className="gap-[7px] flex-row-reverse pl-[110px]">
+              <Text className="text-[#DFD09C] text-[14px] leading-[20px] font-bold">
+                {c.heading}
               </Text>
+              <Image source={c.image} />
+            </View>
+            <View style={styles.rowContainer}>
               <View style={styles.lineContainer}>
                 <View style={styles.horizontalLine} />
               </View>
-            </View>
-            <View className="gap-[7px]">
-              <Text className="text-[#DFD09C] text-[16px] leading-[20px] font-bold">
-                {c.heading}
-              </Text>
-              <Text className="text-[#C4C4C4] text-[12px] leading-4 font-normal">
-                {c.desc}
-              </Text>
             </View>
           </View>
         ))}
@@ -90,7 +95,7 @@ const News = () => {
   );
 };
 
-export default News;
+export default Podcast;
 
 const styles = StyleSheet.create({
   horizontalLine: {
@@ -107,6 +112,5 @@ const styles = StyleSheet.create({
   },
   lineContainer: {
     flex: 1, // Ensures line fills remaining space
-    marginLeft: 10, // Space between text and line
   },
 });

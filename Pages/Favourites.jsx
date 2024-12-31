@@ -3,7 +3,10 @@ import { View, Text } from "react-native";
 const Favourites = () => {
   return (
     <View style={""}>
-      <Text style={{ color: "white", textAlign: "justify" }}>
+      <Text
+        // style={{ color: "white", textAlign: "justify" }}
+        className="text-[white] text-justify"
+      >
         The Role of Icons in Modern User Interface Design In the fast-evolving
         world of digital interfaces, visual elements like icons have become
         integral to user experience (UX) and user interface (UI) design. Icons

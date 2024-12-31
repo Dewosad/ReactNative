@@ -48,7 +48,7 @@ const Login = () => {
           multiline={true}
         ></TextInput>
       </View>
-      <TouchableOpacity onPress={() => Alert.alert("Button pressed")}>
+      <TouchableOpacity>
         <View className="rounded-full bg-[#1f4068] p-2 flex items-center justify-center">
           <Text className="text-[white]">SUBMIT</Text>
         </View>
